@@ -1,18 +1,9 @@
 server:
+  #port: 8084  cuando dejamos 0 utiliza random
   port: ${PORT:${SERVER_PORT:0}}
-  #8084
 spring:
   application:
     name: catalog-service
-    datasource:
-      driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/catalog-dev
-      username: usr-catalog
-      password: pwd-catalog
-    jpa:
-      hibernate.ddl-auto: update
-      generate-ddl: true
-      show-sql: true
 info:
   application:
     name: catalog-service
@@ -22,9 +13,7 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     registerWithEureka: true
-    fetchRegistry: true
+    fetchRegistry: true   #ver si lleva false, quien consume a quien
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-
+      defaulZone: http://localhost:8761/eureka/
 
