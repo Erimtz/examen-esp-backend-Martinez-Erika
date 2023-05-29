@@ -7,8 +7,8 @@ spring:
     datasource:
       driverClassName: com.mysql.jdbc.Driver
       url: jdbc:mysql://localhost:3306/catalog-dev
-      username: usr-catalog-service
-      password: pwd-catalog-service
+      username: usr-catalog
+      password: pwd-catalog
     jpa:
       hibernate.ddl-auto: update
       generate-ddl: true
