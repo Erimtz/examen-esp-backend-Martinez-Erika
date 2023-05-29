@@ -4,6 +4,15 @@ server:
 spring:
   application:
     name: catalog-service
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/catalog-dev
+      username: usr-catalog-service
+      password: pwd-catalog-service
+    jpa:
+      hibernate.ddl-auto: update
+      generate-ddl: true
+      show-sql: true
 info:
   application:
     name: catalog-service
