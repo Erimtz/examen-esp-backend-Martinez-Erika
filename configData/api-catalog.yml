@@ -3,7 +3,7 @@ server:
   port: 0
 spring:
   application:
-    name: catalog-service
+    name: api-catalog
 
 eureka:
   instance:
