@@ -4,7 +4,8 @@ server:
 spring:
   application:
     name: api-catalog
-
+   zipkin:
+    baseUrl: http://localhost:9411/
 eureka:
   instance:
     hostname: localhost
