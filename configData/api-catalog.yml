@@ -1,12 +1,32 @@
 server:
-  #port: 8084
   port: 0
 spring:
   application:
     name: api-catalog
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   zipkin:
     baseUrl: http://localhost:9411/
+
+  mongodb:
+    embedded:
+      version: 4.0.2
+    data:
+      mongodb:
+        database: test
+        port: 27017
+
+info:
+  application:
+    name: api-catalog
+
+
 eureka:
+  healthcheck:
+    enabled: true
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -15,4 +35,3 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
