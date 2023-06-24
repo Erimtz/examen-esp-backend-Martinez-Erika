@@ -16,3 +16,29 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
+resilience4j:
+  retry:
+    configs:
+      default:
+        max-retry-attempts: 3
+        wait-duration: 1s
+        retry-exceptions:
+          - java.io.IOException
+          - java.net.SocketTimeoutException
+      instances:
+        findMovieCircuitBreaker:
+          base-config: default
+          max-retry-attempts: 5
+          wait-duration: 2s
+          retry-exceptions:
+            - java.net.ConnectException
+        findSerieCircuitBreaker:
+          base-config: default
+          max-retry-attempts: 5
+          wait-duration: 2s
+          retry-exceptions:
+            - java.net.ConnectException
+  circuit-breaker:
+    configs:
+      default:
+        register-health-indicator: true
