@@ -56,7 +56,6 @@ resilience4j:
   circuit-breaker:
     configs:
       default:
-<<<<<<< HEAD
         register-health-indicator: true
         sliding-window-size: 10
         minimum-number-of-calls: 5
@@ -72,6 +71,4 @@ resilience4j:
         wait-duration-in-open-state: 1m
         failure-rate-threshold: 20
 
-=======
-        register-health-indicator: true
->>>>>>> dd14f1664cb300ca297c9366bee906f4c785d578
+
