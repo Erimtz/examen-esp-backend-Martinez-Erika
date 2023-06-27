@@ -35,7 +35,7 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
-<<<<<<< HEAD
+
 
 resilience4j:
   retry:
@@ -63,5 +63,3 @@ resilience4j:
     configs:
       default:
         register-health-indicator: true
-=======
->>>>>>> 56aadf06fc2139ea30633d1d8ed44c42b3764e93
