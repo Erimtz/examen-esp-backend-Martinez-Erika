@@ -28,8 +28,15 @@ spring:
         dialect: org.hibernate.dialect.MySQL55Dialect
         format_sql: true
     show-sql: false
+    management:
+      info:
+        env:
+          enabled = true
+      endpoints:
+        web:
+          exposure:
+            include: serviceregistry,health,info
 
-urlCheck: http://localhost:8083
 
 eureka:
   instance:
